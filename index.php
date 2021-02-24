@@ -49,16 +49,12 @@
         case 'delete_flight':
             $flight_id = filter_input(INPUT_POST, 'flight_id', FILTER_VALIDATE_INT);
             if (!$flight_id) {
-                echo "Enter Valid Flight ID and Try again!"
+                echo "Enter Valid Flight ID and Try again!";
             }
-            
-
-
-
-
-
+            deleteFlight($flight_id);
+            break;
     }
-
+    
     function fuelUsed() {
         return ($total_fuel - $fuel_remaining);
     }
