@@ -7,7 +7,7 @@ function getFlight($departure) {
                 WHERE departure = :departure
                 ORDER BY Flight_No desc';
     $statement = $db->prepare($query);
-    $statement->bindValue(':flight_id', $departure);
+    $statement->bindValue(':departure', $departure);
     $values = $statement->fetchAll();
     $statement->closeCursor();
 }
